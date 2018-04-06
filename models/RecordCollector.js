@@ -13,4 +13,8 @@ RecordCollector.prototype.sell = function(recordToSell) {
   _.remove(this.collection, record => record === recordToSell);
 };
 
+RecordCollector.prototype.addCash = function(cash) {
+  this.cash += cash;
+};
+
 module.exports = RecordCollector;

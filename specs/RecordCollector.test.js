@@ -17,7 +17,10 @@ describe("RecordCollector", () => {
     assert.strictEqual(0, collector.cash);
   });
 
-  it("should add cash");
+  it("should add cash", () => {
+    collector.addCash(10);
+    assert.strictEqual(10, collector.cash);
+  });
 
   it("should remove cash");
 

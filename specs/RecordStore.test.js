@@ -19,4 +19,7 @@ describe("RecordStore", () => {
   it("should have an inventory", () => {
     assert.deepStrictEqual([], recordStore.inventory)
   });
+
+  it("should have a balance")
+  it("should be able to add to the balance")
 });

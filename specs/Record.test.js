@@ -9,18 +9,18 @@ describe("Record", () => {
   });
 
   it("should have an artist", () => {
-    assert.equal("Amon Tobin", record.artist);
+    assert.strictEqual("Amon Tobin", record.artist);
   });
 
   it("should have a title", () => {
-    assert.equal("Permutation", record.title);
+    assert.strictEqual("Permutation", record.title);
   });
 
   it("should have a genre", () => {
-    assert.equal("electronic", record.genre);
+    assert.strictEqual("electronic", record.genre);
   });
 
   it("should have a price", () => {
-    assert.equal(10, record.price)
+    assert.strictEqual(10, record.price)
   });
 });

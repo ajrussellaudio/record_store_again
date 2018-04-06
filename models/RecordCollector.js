@@ -11,6 +11,7 @@ RecordCollector.prototype.buy = function(record) {
 };
 
 RecordCollector.prototype.sell = function(recordToSell) {
+  this.addCash(recordToSell.price);
   _.remove(this.collection, record => record === recordToSell);
 };
 

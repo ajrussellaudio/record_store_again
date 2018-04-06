@@ -109,7 +109,12 @@ describe("RecordCollector", () => {
     );
   });
 
-  it(
-    "should be able to compare the value of their collection with another RecordCollector"
-  );
+  it("should be able to compare the value of their collection with another RecordCollector", () => {
+    const rivalCollector = new RecordCollector();
+    collector.addCash(expensiveRecord.price);
+    collector.buy(expensiveRecord);
+    rivalCollector.addCash(record.price);
+    rivalCollector.buy(record);
+    assert(collector.hasMoreExpensiveCollectionThan(rivalCollector));
+  });
 });

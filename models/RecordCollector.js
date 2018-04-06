@@ -48,4 +48,8 @@ RecordCollector.prototype.sortedRecordsByValue = function(ascending) {
   return ascending ? sortedRecordsByValue : sortedRecordsByValue.reverse();
 };
 
+RecordCollector.prototype.hasMoreExpensiveCollectionThan = function(other) {
+  return this.collectionValue() > other.collectionValue();
+};
+
 module.exports = RecordCollector;

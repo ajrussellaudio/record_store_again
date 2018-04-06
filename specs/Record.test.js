@@ -23,4 +23,6 @@ describe("Record", () => {
   it("should have a price", () => {
     assert.strictEqual(10, record.price)
   });
+
+  it("should print its properties as a string")
 });

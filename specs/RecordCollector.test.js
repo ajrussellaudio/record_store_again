@@ -3,10 +3,11 @@ const Record = require("../models/Record");
 const assert = require("assert");
 
 describe("RecordCollector", () => {
-  let collector;
+  let collector, record;
 
   beforeEach(() => {
     collector = new RecordCollector();
+    record = new Record("Amon Tobin", "Permutation", "electronic", 10);
   });
 
   it("should have a record collection", () => {
@@ -29,7 +30,6 @@ describe("RecordCollector", () => {
   });
 
   it("should buy records, adding to collection and decreasing cash", () => {
-    const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
     collector.addCash(record.price);
     collector.buy(record);
     assert.deepStrictEqual([record], collector.collection);
@@ -37,7 +37,6 @@ describe("RecordCollector", () => {
   });
 
   it("should sell records, removing from collection and increasing cash", () => {
-    const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
     collector.addCash(record.price);
     collector.buy(record);
     collector.sell(record);

@@ -24,8 +24,19 @@ RecordStore.prototype.sell = function(record) {
   this.addBalance(record.price);
 };
 
-RecordStore.prototype.removeFromInventory = function (purchase) {
+RecordStore.prototype.removeFromInventory = function(purchase) {
   _.remove(this.inventory, record => record === purchase);
+};
+
+RecordStore.prototype.finances = function() {
+  return {
+    stockValue: this.stockValue(),
+    balance: this.balance
+  };
+};
+
+RecordStore.prototype.stockValue = function() {
+  return this.inventory.reduce((sum, record) => sum + record.price, 0);
 };
 
 module.exports = RecordStore;

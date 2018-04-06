@@ -58,5 +58,14 @@ describe("RecordStore", () => {
     assert.strictEqual(record.price, recordStore.balance);
   });
 
-  it("should report the finances, showing the balance and value of inventory")
+  it("should report the finances, showing the balance and value of inventory", () => {
+    const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
+    recordStore.addRecord(record);
+    recordStore.addBalance(100);
+    const expectedFinances = {
+      stockValue: 10,
+      balance: 100
+    };
+    assert.deepStrictEqual(expectedFinances, recordStore.finances());
+  });
 });

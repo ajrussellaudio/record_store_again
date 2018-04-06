@@ -28,11 +28,17 @@ describe("RecordStore", () => {
   });
 
   it("should list the inventory", () => {
-    recordStore.addRecord(new Record("Amon Tobin", "Permutation", "electronic", 10))
-    recordStore.addRecord(new Record("Photek", "Modus Operandi", "drum & bass", 10))
-    const expected = ["Amon Tobin - Permutation (electronic), £10",
-    "Photek - Modus Operandi (drum & bass), £10"]
-    assert.deepStrictEqual(expected, recordStore.listInventory())
+    recordStore.addRecord(
+      new Record("Amon Tobin", "Permutation", "electronic", 10)
+    );
+    recordStore.addRecord(
+      new Record("Photek", "Modus Operandi", "drum & bass", 10)
+    );
+    const expected = [
+      "Amon Tobin - Permutation (electronic), £10",
+      "Photek - Modus Operandi (drum & bass), £10"
+    ];
+    assert.deepStrictEqual(expected, recordStore.listInventory());
   });
 
   it("should have a balance", () => {
@@ -44,5 +50,11 @@ describe("RecordStore", () => {
     assert.strictEqual(10, recordStore.balance);
   });
 
-  it("should sell a record and adjust the balance")
+  it("should sell a record and adjust the balance", () => {
+    const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
+    recordStore.addRecord(record);
+    recordStore.sell(record);
+    assert.deepStrictEqual([], recordStore.inventory);
+    assert.strictEqual(record.price, recordStore.balance);
+  });
 });

@@ -21,8 +21,13 @@ describe("Record", () => {
   });
 
   it("should have a price", () => {
-    assert.strictEqual(10, record.price)
+    assert.strictEqual(10, record.price);
   });
 
-  it("should print its properties as a string")
+  it("should print its properties as a string", () => {
+    assert.strictEqual(
+      "Amon Tobin - Permutation (electronic), £10",
+      record.print()
+    );
+  });
 });

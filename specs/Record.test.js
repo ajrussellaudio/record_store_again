@@ -20,5 +20,7 @@ describe("Record", () => {
     assert.equal("electronic", record.genre);
   });
 
-  it("should have a price");
+  it("should have a price", () => {
+    assert.equal(10, record.price)
+  });
 });

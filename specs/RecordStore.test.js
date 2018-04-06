@@ -68,4 +68,6 @@ describe("RecordStore", () => {
     };
     assert.deepStrictEqual(expectedFinances, recordStore.finances());
   });
+
+  it("should view all records of a given genre");
 });

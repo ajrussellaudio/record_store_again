@@ -43,4 +43,6 @@ describe("RecordStore", () => {
     recordStore.addBalance(10);
     assert.strictEqual(10, recordStore.balance);
   });
+
+  it("should sell a record and adjust the balance")
 });

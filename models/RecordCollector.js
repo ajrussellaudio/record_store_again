@@ -39,4 +39,8 @@ RecordCollector.prototype.collectionValueByGenre = function(genre) {
   );
 };
 
+RecordCollector.prototype.mostValuableRecord = function() {
+  return _.maxBy(this.collection, "price");
+};
+
 module.exports = RecordCollector;

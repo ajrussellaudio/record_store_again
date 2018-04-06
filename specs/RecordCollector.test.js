@@ -69,4 +69,17 @@ describe("RecordCollector", () => {
       collector.collectionValueByGenre("rock")
     );
   });
+
+  it("should be able to view their most valuable record", () => {
+    const expensiveRecord = new Record(
+      "Wu-Tang Clan",
+      "Once Upon a Time in Shaolin",
+      "hip hop",
+      2000000
+    );
+    collector.addCash(record.price + expensiveRecord.price);
+    collector.buy(record);
+    collector.buy(expensiveRecord);
+    assert.strictEqual(expensiveRecord, collector.mostValuableRecord());
+  });
 });

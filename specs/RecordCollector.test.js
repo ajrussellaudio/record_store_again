@@ -82,4 +82,8 @@ describe("RecordCollector", () => {
     collector.buy(expensiveRecord);
     assert.strictEqual(expensiveRecord, collector.mostValuableRecord());
   });
+
+  it("should be able to sort their records by value (ascending)");
+
+  it("should be able to sort their records by value (descending)");
 });

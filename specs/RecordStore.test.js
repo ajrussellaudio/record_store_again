@@ -57,4 +57,6 @@ describe("RecordStore", () => {
     assert.deepStrictEqual([], recordStore.inventory);
     assert.strictEqual(record.price, recordStore.balance);
   });
+
+  it("should report the finances, showing the balance and value of inventory")
 });

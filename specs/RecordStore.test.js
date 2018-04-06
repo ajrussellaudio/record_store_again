@@ -24,5 +24,8 @@ describe("RecordStore", () => {
     assert.strictEqual(0, recordStore.balance);
   });
 
-  it("should be able to add to the balance");
+  it("should be able to add to the balance", () => {
+    recordStore.addBalance(10);
+    assert.strictEqual(10, recordStore.balance);
+  });
 });

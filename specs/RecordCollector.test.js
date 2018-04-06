@@ -43,4 +43,11 @@ describe("RecordCollector", () => {
     assert.deepStrictEqual([], collector.collection);
     assert.strictEqual(record.price, collector.cash);
   });
+
+  it("should not buy record it can't afford", () => {
+    collector.addCash(record.price / 2);
+    collector.buy(record);
+    assert.deepStrictEqual([], collector.collection);
+    assert.strictEqual(record.price / 2, collector.cash);
+  });
 });

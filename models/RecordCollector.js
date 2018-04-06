@@ -6,8 +6,10 @@ const RecordCollector = function() {
 };
 
 RecordCollector.prototype.buy = function(record) {
-  this.removeCash(record.price);
-  this.collection.push(record);
+  if (this.cash >= record.price) {
+    this.removeCash(record.price);
+    this.collection.push(record);
+  }
 };
 
 RecordCollector.prototype.sell = function(recordToSell) {

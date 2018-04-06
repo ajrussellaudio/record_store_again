@@ -5,6 +5,10 @@ const RecordStore = function(name, city) {
   this.balance = 0;
 };
 
+RecordStore.prototype.addRecord = function(record) {
+  this.inventory.push(record);
+};
+
 RecordStore.prototype.addBalance = function(amount) {
   this.balance += amount;
 };

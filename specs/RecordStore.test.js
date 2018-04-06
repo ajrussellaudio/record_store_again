@@ -1,4 +1,5 @@
 const RecordStore = require("../models/RecordStore");
+const Record = require("../models/Record");
 const assert = require("assert");
 
 describe("RecordStore", () => {
@@ -20,7 +21,11 @@ describe("RecordStore", () => {
     assert.deepStrictEqual([], recordStore.inventory);
   });
 
-  it("should be able to add records to the inventory")
+  it("should be able to add records to the inventory", () => {
+    const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
+    recordStore.addRecord(record);
+    assert.deepStrictEqual([record], recordStore.inventory);
+  });
 
   it("should have a balance", () => {
     assert.strictEqual(0, recordStore.balance);

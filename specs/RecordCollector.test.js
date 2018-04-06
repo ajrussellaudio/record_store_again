@@ -22,7 +22,11 @@ describe("RecordCollector", () => {
     assert.strictEqual(10, collector.cash);
   });
 
-  it("should remove cash");
+  it("should remove cash", () => {
+    collector.addCash(10);
+    collector.removeCash(6);
+    assert.strictEqual(4, collector.cash);
+  });
 
   it("should buy records", () => {
     const record = new Record("Amon Tobin", "Permutation", "electronic", 10);

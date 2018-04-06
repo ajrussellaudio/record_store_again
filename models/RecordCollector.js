@@ -17,4 +17,8 @@ RecordCollector.prototype.addCash = function(cash) {
   this.cash += cash;
 };
 
+RecordCollector.prototype.removeCash = function(cash) {
+  this.addCash(-cash);
+};
+
 module.exports = RecordCollector;

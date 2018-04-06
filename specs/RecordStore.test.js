@@ -13,13 +13,16 @@ describe("RecordStore", () => {
   });
 
   it("should have a city", () => {
-    assert.strictEqual("Glasgow", recordStore.city)
+    assert.strictEqual("Glasgow", recordStore.city);
   });
 
   it("should have an inventory", () => {
-    assert.deepStrictEqual([], recordStore.inventory)
+    assert.deepStrictEqual([], recordStore.inventory);
   });
 
-  it("should have a balance")
-  it("should be able to add to the balance")
+  it("should have a balance", () => {
+    assert.strictEqual(0, recordStore.balance);
+  });
+
+  it("should be able to add to the balance");
 });

@@ -28,10 +28,12 @@ describe("RecordCollector", () => {
     assert.strictEqual(4, collector.cash);
   });
 
-  it("should buy records", () => {
+  it("should buy records, adding to collection and decreasing cash", () => {
     const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
+    collector.addCash(record.price);
     collector.buy(record);
     assert.deepStrictEqual([record], collector.collection);
+    assert.strictEqual(0, collector.cash);
   });
 
   it("should sell records", () => {

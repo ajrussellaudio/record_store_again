@@ -6,6 +6,7 @@ const RecordCollector = function() {
 };
 
 RecordCollector.prototype.buy = function(record) {
+  this.removeCash(record.price);
   this.collection.push(record);
 };
 

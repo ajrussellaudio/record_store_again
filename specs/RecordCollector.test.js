@@ -83,7 +83,35 @@ describe("RecordCollector", () => {
     assert.strictEqual(expensiveRecord, collector.mostValuableRecord());
   });
 
-  it("should be able to sort their records by value (ascending)");
+  it("should be able to sort their records by value (ascending)", () => {
+    const expensiveRecord = new Record(
+      "Wu-Tang Clan",
+      "Once Upon a Time in Shaolin",
+      "hip hop",
+      2000000
+    );
+    collector.addCash(record.price + expensiveRecord.price);
+    collector.buy(record);
+    collector.buy(expensiveRecord);
+    assert.deepStrictEqual(
+      [record, expensiveRecord],
+      collector.sortedRecordsByValue(true)
+    );
+  });
 
-  it("should be able to sort their records by value (descending)");
+  it("should be able to sort their records by value (descending)", () => {
+    const expensiveRecord = new Record(
+      "Wu-Tang Clan",
+      "Once Upon a Time in Shaolin",
+      "hip hop",
+      2000000
+    );
+    collector.addCash(record.price + expensiveRecord.price);
+    collector.buy(record);
+    collector.buy(expensiveRecord);
+    assert.deepStrictEqual(
+      [expensiveRecord, record],
+      collector.sortedRecordsByValue()
+    );
+  });
 });

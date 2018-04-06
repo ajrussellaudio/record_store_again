@@ -43,4 +43,9 @@ RecordCollector.prototype.mostValuableRecord = function() {
   return _.maxBy(this.collection, "price");
 };
 
+RecordCollector.prototype.sortedRecordsByValue = function(ascending) {
+  const sortedRecordsByValue = _.sortBy(this.collection, "price");
+  return ascending ? sortedRecordsByValue : sortedRecordsByValue.reverse();
+};
+
 module.exports = RecordCollector;

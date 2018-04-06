@@ -25,8 +25,18 @@ RecordCollector.prototype.removeCash = function(cash) {
   this.addCash(-cash);
 };
 
+RecordCollector.prototype.sumRecordPrices = function(collection) {
+  return collection.reduce((sum, record) => sum + record.price, 0);
+};
+
 RecordCollector.prototype.collectionValue = function() {
-  return this.collection.reduce((sum, record) => sum + record.price, 0);
+  return this.sumRecordPrices(this.collection);
+};
+
+RecordCollector.prototype.collectionValueByGenre = function(genre) {
+  return this.sumRecordPrices(
+    this.collection.filter(record => record.genre === genre)
+  );
 };
 
 module.exports = RecordCollector;

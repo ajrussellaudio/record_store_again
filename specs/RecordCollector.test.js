@@ -57,4 +57,16 @@ describe("RecordCollector", () => {
     collector.buy(record);
     assert.strictEqual(record.price * 2, collector.collectionValue());
   });
+
+  it("should view the total value of collection by genre", () => {
+    const rockRecord = new Record("Led Zeppelin", "IV", "rock", 15);
+    collector.addCash(record.price + rockRecord.price * 2);
+    collector.buy(record);
+    collector.buy(rockRecord);
+    collector.buy(rockRecord);
+    assert.strictEqual(
+      rockRecord.price * 2,
+      collector.collectionValueByGenre("rock")
+    );
+  });
 });

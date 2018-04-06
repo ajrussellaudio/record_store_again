@@ -50,4 +50,11 @@ describe("RecordCollector", () => {
     assert.deepStrictEqual([], collector.collection);
     assert.strictEqual(record.price / 2, collector.cash);
   });
+
+  it("should view the total value of collection", () => {
+    collector.addCash(record.price * 2);
+    collector.buy(record);
+    collector.buy(record);
+    assert.strictEqual(record.price * 2, collector.collectionValue());
+  });
 });

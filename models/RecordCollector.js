@@ -25,4 +25,8 @@ RecordCollector.prototype.removeCash = function(cash) {
   this.addCash(-cash);
 };
 
+RecordCollector.prototype.collectionValue = function() {
+  return this.collection.reduce((sum, record) => sum + record.price, 0);
+};
+
 module.exports = RecordCollector;

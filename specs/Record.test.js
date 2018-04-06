@@ -16,6 +16,9 @@ describe("Record", () => {
     assert.equal("Permutation", record.title);
   });
 
-  it("should have a genre");
+  it("should have a genre", () => {
+    assert.equal("electronic", record.genre);
+  });
+
   it("should have a price");
 });

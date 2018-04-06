@@ -1,6 +1,7 @@
-const Record = function(artist, title) {
+const Record = function(artist, title, genre) {
   this.artist = artist;
   this.title = title;
+  this.genre = genre;
 };
 
 module.exports = Record;

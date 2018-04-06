@@ -39,4 +39,8 @@ RecordStore.prototype.stockValue = function() {
   return this.inventory.reduce((sum, record) => sum + record.price, 0);
 };
 
+RecordStore.prototype.viewByGenre = function(genre) {
+  return this.inventory.filter(record => record.genre === genre);
+};
+
 module.exports = RecordStore;

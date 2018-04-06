@@ -69,5 +69,12 @@ describe("RecordStore", () => {
     assert.deepStrictEqual(expectedFinances, recordStore.finances());
   });
 
-  it("should view all records of a given genre");
+  it("should view all records of a given genre", () => {
+    const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
+    recordStore.addRecord(record);
+    recordStore.addRecord(
+      new Record("Photek", "Modus Operandi", "drum & bass", 10)
+    );
+    assert.deepStrictEqual([record], recordStore.viewByGenre("electronic"))
+  });
 });

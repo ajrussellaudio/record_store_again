@@ -108,4 +108,8 @@ describe("RecordCollector", () => {
       collector.sortedRecordsByValue()
     );
   });
+
+  it(
+    "should be able to compare the value of their collection with another RecordCollector"
+  );
 });

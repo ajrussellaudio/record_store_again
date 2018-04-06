@@ -13,4 +13,8 @@ RecordStore.prototype.addBalance = function(amount) {
   this.balance += amount;
 };
 
+RecordStore.prototype.listInventory = function () {
+  return this.inventory.map(record => record.print())
+};
+
 module.exports = RecordStore;

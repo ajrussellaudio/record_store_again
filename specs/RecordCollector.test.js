@@ -19,5 +19,10 @@ describe("RecordCollector", () => {
     assert.deepStrictEqual([record], collector.collection);
   });
 
-  it("should sell records");
+  it("should sell records", () => {
+    const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
+    collector.buy(record);
+    collector.sell(record);
+    assert.deepStrictEqual([], collector.collection);
+  });
 });

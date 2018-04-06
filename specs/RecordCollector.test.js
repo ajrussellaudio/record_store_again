@@ -13,6 +13,14 @@ describe("RecordCollector", () => {
     assert.deepStrictEqual([], collector.collection);
   });
 
+  it("should have cash", () => {
+    assert.strictEqual(0, collector.cash);
+  });
+
+  it("should add cash");
+
+  it("should remove cash");
+
   it("should buy records", () => {
     const record = new Record("Amon Tobin", "Permutation", "electronic", 10);
     collector.buy(record);

@@ -2,6 +2,7 @@ const _ = require("lodash");
 
 const RecordCollector = function() {
   this.collection = [];
+  this.cash = 0;
 };
 
 RecordCollector.prototype.buy = function(record) {
